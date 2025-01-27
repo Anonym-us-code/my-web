@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Languages</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <h2>
+                <a href="main.html">Dr-Mandu</a>
+            </h2>
+        </div>
+        <div class="nav-links">
+            <ul>
+                <li>
+                    <a href="main.html">Home</a>
+                </li>
+                <li>
+                    <a href="about.html">About</a>
+                </li>
+                <li>
+                    <a href="Contact.html">Contact</a>
+                </li>
+                <li>
+                    <a href="cv.html">My-Cv</a>
+                </li>
+            </ul>
+            <div class="projects">
+                <a href="projects.html" class="btn">Projects</a>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="hero">
+        <h1>Dr Mandu</h1>
+        <p>This is the official website for Dr-Mandu. A self-motivated individual who holds a partially fullfilled degree in clinical medicine and also a software developer. My main goal is to use my tech knowlede and medical knowledge to bring about the best user experience in the mordern world.</p>
+        <a href="about.html" class="btn">Learn More</a>
+    </div>
+    <main class="page">
+     <div class="main-container">
+        <div class="top-container">
+            <div class="pic">
+                <img src="images/dr mandu.jpeg" alt="My photo" class="drMandu">
+            </div>
+            <h4><a href="mailto:wanjala2007@gmail.com">wajala2007@gmail.com</a></h4>
+        </div>
+        <div class="bottom-container">
+            <div class="title-links">
+                <ul>
+                    <li>
+                        <a href="cv.html">Academia</a>
+                    </li>
+                    <li>
+                        <a href="proffession.html">Profession</a>
+                    </li>
+                    <li>
+                        <a href="skills.html">Skills</a>
+                    </li>
+                    <li>
+                        <a href="msgme.html">Contacts</a>
+                    </li>
+                    <li>
+                        <a href="langs.html">Languages</a>
+                    </li>
+                    <li>
+                        <a href="hobbies.html">Hobbies</a>
+                    </li>
+                    <li>
+                        <a href="" download="dr mandu cv" id="download" title="download cv">Download</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="description">
+              <ul>
+                <li>Swahili</li>
+                <li>English</li>
+                <li>Luhya</li>
+                <li>French</li>
+                <li>Germany</li>
+              </ul>
+            </div>
+        </div>
+     </div>
+      
+    </main>
+    <footer class="page-footer">
+        <p>
+            &copy;<span id="date"></span> <a href="main.html">Dr-Mandu</a>  Built by <a href="main.html">Dr-Mandu</a>
+        </p>
+    </footer>
+    <script >
+        function getElement(selector){
+            var element = document.querySelector(selector);
+            if(element)return element
+            throw Error(`There is no${selector} class`)
+        }
+        var academia = getElement(".academia");
+var drop = getElement("#drop");
+function show(){
+    academia.classList.toggle("show-table")
+    drop.innerHTML = "&uparrow;"
+}
+
+drop.addEventListener("click", show, false)
+    </script>
+</body>
+</html>

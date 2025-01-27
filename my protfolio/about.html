@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Daqtari</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <h2>
+                <a href="main.html">Dr-Mandu</a>
+            </h2>
+        </div>
+        <div class="nav-links">
+            <ul>
+                <li>
+                    <a href="main.html">Home</a>
+                </li>
+                <li>
+                    <a href="about.html">About</a>
+                </li>
+                <li>
+                    <a href="Contact.html">Contact</a>
+                </li>
+                <li>
+                    <a href="cv.html">My-Cv</a>
+                </li>
+            </ul>
+            <div class="projects">
+                <a href="projects.html" class="btn">Projects</a>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="hero">
+        <h1>Dr Mandu</h1>
+        <p>This is the official website for Dr-Mandu. A self-motivated individual who holds a partially fullfilled degree in clinical medicine and also a software developer. My main goal is to use my tech knowlede and medical knowledge to bring about the best user experience in the mordern world.</p>
+        <a href="about.html" class="btn">Learn More</a>
+    </div>
+    <main class="page" style="height: 100vh;">
+      <div class="about one">
+        <h2>Background</h2>
+        <p><a href="main.html">Dr-Mandu</a> is a kenyan resident from the western province. He is a detail-oriented person who is also a time-consious individual.He has been combining his medical and software skills to bring about the best user interfaces in the modern world.</p>
+      </div>
+      <div class="about two">
+        <h2>Academic</h2>
+        <p><a href="main.html">Dr-Mandu</a> is a highly literate individual holding a partially fullfilled degree in clinical medicine and surgery from the great <a href="uzimauniversity.com">Uzima University.</a> He sat for his KCSE in kenya at mahanga k secondary school and managed to get a mean garde of B+.</p>
+      </div>
+      <div class="about three">
+        <h2>Profession</h2>
+        <p><a href="main.html">Dr-Mandu</a> has had a very diversed professional experience. He worked at tata motors as a record keeper in 2019. He also worked as a clinician assistant at kombewa county hospital in 2023. In 2024 he worked as a customer service agent at mobitech solutions in nairobi, he worked as a debt collector at CAL kisumu, and currently is unemployed and is actively looking for available jobs.</p>
+      </div>
+      <div class="about four">
+        <h2>Tech Journey</h2>
+        <p>My tech passion was never there during my highschool and early college years. I developed intrest in tech specifically the programming side after getting my first pc in 2021. Since then I started learning Web development and advanced to software development in 2024 january. I plan to enroll at one of the universities soon to pursue computer science.</p>
+      </div>
+     
+    </main>
+    <footer class="page-footer">
+        <p>
+            &copy;<span id="date"></span> <a href="main.html">Dr-Mandu</a>  Built by <a href="main.html">Dr-Mandu</a>
+        </p>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        let aboutOne, aboutTwo, aboutThree, aboutFour;
+        function findElement(selector){
+            let element = document.querySelector(selector);
+            if(element)return element;
+            throw Error(`there is no ${selector} class`)
+        }
+        aboutOne = findElement(".one");
+        aboutTwo = findElement(".two");
+        aboutThree = findElement(".three");
+        aboutFour = findElement(".four");
+
+        aboutTwo.addEventListener("mouseenter", function(event){
+            event.target.style.transition = "0.3s ease"
+            aboutOne.style.zIndex = 2
+        })
+        aboutTwo.addEventListener("mouseleave", function(){
+            aboutOne.style.zIndex = 4
+        })
+        aboutThree.addEventListener("mouseenter",function(event){
+            aboutOne.style.zIndex = 2
+            event.target.style.zIndex = 4
+        })
+        aboutThree.addEventListener("mouseleave", function(){
+            aboutOne.style.zIndex = 4
+            event.target.style.zIndex = 2
+        })
+        aboutFour.addEventListener("mouseenter",function(event){
+          aboutOne.style.zIndex = 1
+          aboutTwo.style.zIndex = 2
+          aboutThree.style.zIndex = 3
+            event.target.style.zIndex = 4
+        })
+
+        aboutFour.addEventListener("mouseleave",function(event){
+          aboutOne.style.zIndex = 4
+          aboutTwo.style.zIndex = 3
+          aboutThree.style.zIndex = 2
+            event.target.style.zIndex = 1
+        })
+        
+    </script>
+</body>
+</html>

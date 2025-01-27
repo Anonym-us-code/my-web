@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Daqtari</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <h2>
+                <a href="main.html">Dr-Mandu</a>
+            </h2>
+        </div>
+        <div class="nav-links">
+            <ul>
+                <li>
+                    <a href="main.html">Home</a>
+                </li>
+                <li>
+                    <a href="about.html">About</a>
+                </li>
+                <li>
+                    <a href="Contact.html">Contact</a>
+                </li>
+                <li>
+                    <a href="cv.html">My-Cv</a>
+                </li>
+            </ul>
+            <div class="projects">
+                <a href="projects.html" class="btn">Projects</a>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="hero">
+        <h1>Dr Mandu</h1>
+        <p>This is the official website for Dr-Mandu. A self-motivated individual who holds a partially fullfilled degree in clinical medicine and also a software developer. My main goal is to use my tech knowlede and medical knowledge to bring about the best user experience in the mordern world.</p>
+        <a href="about.html" class="btn">Learn More</a>
+    </div>
+    <main class="page">
+        <form action="#" id="myForm">
+           <div class="inputs">
+            <div class="username">
+                <label for="username"><strong>Username:</strong></label><br>
+                    <input type="text" name="username" placeholder="input username"id="inName">
+            </div>
+            <div class="mail">
+                <label for="email"><strong>Email:</strong></label><br>
+                    <input type="email" name="email" placeholder="input email" id="inMail">
+            </div>
+
+           <div class="password">
+                <label for="password"><strong>Password:</strong></label><br>
+                    <input type="password" name="password" placeholder="input password" id="inPassword">
+            </div>
+            <div class="submit-btn">
+                <button type="submit" class="btn">send</button>
+            </div>
+           </div>
+
+            <div class="comments">
+                <textarea name="comments" id="comments" cols="" rows="15" placeholder="comments here"></textarea>
+            </div>
+        </form>
+        <div class="warning">
+            <span id="warning"></span>
+        </div>
+      <div class="sign-up">
+        <p>No account Yet?</p>
+        <h2><a href="sign-up.html" class="btn">SIGN UP</a></h2>
+      </div>
+    </main>
+    <footer class="page-footer">
+        <p>
+            &copy;<span id="date"></span> <a href="main.html">Dr-Mandu</a>  Built by <a href="main.html">Dr-Mandu</a>
+        </p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

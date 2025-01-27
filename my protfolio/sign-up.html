@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign up</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <h2>
+          <a href="main.html">Dr-Mandu</a>
+        </h2>
+      </div>
+      <div class="nav-links">
+        <ul>
+          <li>
+            <a href="main.html">Home</a>
+          </li>
+          <li>
+            <a href="about.html">About</a>
+          </li>
+          <li>
+            <a href="Contact.html">Contact</a>
+          </li>
+          <li>
+            <a href="cv.html">My-Cv</a>
+          </li>
+        </ul>
+        <div class="projects">
+          <a href="projects.html" class="btn">Projects</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="hero">
+      <h1>Dr Mandu</h1>
+      <p>
+        This is the official website for Dr-Mandu. A self-motivated individual who holds a partially fullfilled degree in clinical medicine and also a software developer. My main goal is to use my tech knowlede and medical knowledge to bring about the best user experience in the mordern world.
+      </p>
+      <a href="about.html" class="btn">Learn More</a>
+    </div>
+    <main class="page">
+      <h1>Create Account</h1>
+      <form action="#" id="myForm">
+        <div class="inputs">
+          <div class="username">
+            <label for="username"><strong>Username:</strong></label
+            ><br />
+            <input
+              type="text"
+              name="username"
+              placeholder="input username"
+              id="inName"
+            />
+          </div>
+          <div class="mail">
+            <label for="email"><strong>Email:</strong></label
+            ><br />
+            <input
+              type="email"
+              name="email"
+              placeholder="input email"
+              id="inMail"
+            />
+          </div>
+
+          <div class="password">
+            <label for="password"><strong>Password:</strong></label
+            ><br />
+            <input
+              type="password"
+              name="password"
+              placeholder="input password"
+              id="inPassword"
+            />
+          </div>
+          <div class="pass2">
+            <label for="pass2"><strong>confrim passcode:</strong></label
+            ><br />
+            <input
+              type="password"
+              name="pass2"
+              id="pass2"
+              placeholder="confirm password"
+            />
+          </div>
+          <div class="warning">
+            <span id="warning"></span>
+          </div>
+          <button type="submit" id="signBtn" class="btn">SIGN UP</button>
+        </div>
+      </form>
+    </main>
+    <footer class="page-footer">
+      <p>
+        &copy;<span id="date"></span> <a href="main.html">Dr-Mandu</a> Built by
+        <a href="main.html">Dr-Mandu</a>
+      </p>
+    </footer>
+    <script>
+      function getElement(selector) {
+        var element = document.querySelector(selector);
+        if (element) return element;
+        throw Error(`check again, there is no ${selector} class`);
+      }
+      var form = getElement("#myForm");
+
+
+      var username = form.elements[0];
+      var mail = form.elements[1];
+      var password = form.elements[2];
+      var conPwd = form.elements[3];
+      var warning = getElement("#warning");
+      var details = [username, mail, password, conPwd];
+      function clearWarn(){
+        warning.innerHTML = ""
+      }
+
+      username.addEventListener("keypress", function(event){
+        if(event.key<57){
+            warning.innerHTML = "**only letters are allowed in this field"
+            event.preventDefault()
+            setTimeout(clearWarn, 2000)
+        }
+      })
+      username.addEventListener("paste", function(event){
+        warning.innerHTML = "*no pasting"
+        event.preventDefault()
+        setTimeout(clearWarn, 2000)
+      })
+
+      var handler = function (event) {
+        for (var i = 0; i < details.length; i++) {
+          if (details[i].value == "") {
+            warning.innerHTML = "**Fill in all fields!!";
+            form.reset();
+            event.preventDefault();
+          } 
+        }
+        if ((password.value !== conPwd.value)||(password.value == ""|| conPwd.value == "")) {
+          warning.innerHTML = "**Password mismatch!!";
+          form.reset();
+          event.preventDefault();
+        }
+       
+      };
+      form.addEventListener("submit", handler, false);
+    </script>
+  </body>
+</html>
